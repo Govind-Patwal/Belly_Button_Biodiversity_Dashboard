@@ -80,16 +80,14 @@ function buildCharts(sample) {
     
     ////////////////////// Below code is part of Deliverable 3 //////////////////////////  
     // 3. Create a variable that holds the washing frequency.
-    ///// try to change this to a floating point number
+    ///// change this to a floating point number
     var wfreq = parseFloat(metadataResult.wfreq);
 
     //////// Bar-chart code starts here
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
-
-    top_10_otu_ids_sorted = otu_ids.slice(0, 10).reverse();
-    var yticks = top_10_otu_ids_sorted.map(otu_ids => "OTU " + otu_ids);
+    var yticks = otu_ids.slice(0, 10).reverse().map(otu_ids => "OTU " + otu_ids);
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
@@ -117,7 +115,8 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         size: sample_values,
-        color: otu_ids
+        color: otu_ids,
+        colorscale: 'YlOrRd'
       },
       hovertext: otu_labels,
     }];
@@ -125,7 +124,8 @@ function buildCharts(sample) {
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: 'Bacteria Cultures Per Sample',
-      xaxis: {title: 'OTU ID'}
+      xaxis: {title: 'OTU ID'},
+      hovermode: "closest"
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -141,13 +141,13 @@ function buildCharts(sample) {
         mode: "gauge+number",
         gauge: {
           axis: {range: [null, 10]},
-          bar: {color: "darkred"},
+          bar: {color: "black"},
           steps: [
-            { range: [0, 2], color: "darkblue" },
-            { range: [2, 4], color: "royalblue" },
-            { range: [4, 6], color: "slateblue" },
-            { range: [6, 8], color: "cornflowerblue" },
-            { range: [8, 10], color: "cyan" }
+            { range: [0, 2], color: "red" },
+            { range: [2, 4], color: "orange" },
+            { range: [4, 6], color: "yellow" },
+            { range: [6, 8], color: "lightgreen" },
+            { range: [8, 10], color: "green" }
           ]
         }  
       }  
