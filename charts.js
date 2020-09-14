@@ -80,9 +80,8 @@ function buildCharts(sample) {
     
     ////////////////////// Below code is part of Deliverable 3 //////////////////////////  
     // 3. Create a variable that holds the washing frequency.
-///// try to change this to a floating point number
-
-    var wfreq = metadataResult.wfreq;
+    ///// try to change this to a floating point number
+    var wfreq = parseFloat(metadataResult.wfreq);
 
     //////// Bar-chart code starts here
     // 7. Create the yticks for the bar chart.
@@ -137,7 +136,7 @@ function buildCharts(sample) {
     var gaugeData = [
       {
         value: wfreq,
-        title: { text: "<h3>Belly Button Washing Frequency</h3><br>Scrubs per Week" },
+        title: { text: "Belly Button Washing Frequency<br>Scrubs per Week" },
         type: "indicator",
         mode: "gauge+number",
         gauge: {
