@@ -12,9 +12,11 @@ Roza has a partially completed dashboard that she needs to finish. She has a com
 
 A very interactive website
 
-Screenshot
+**Live website**: https://govind-patwal.github.io/Belly_Button_Biodiversity_Dashboard/
+
+**Screenshot**
 ![Bellybutton_diversity_dashboard](images/Bellybutton_diversity_dashboard.png)
 
-Live website: https://govind-patwal.github.io/Belly_Button_Biodiversity_Dashboard/
+
 
 
